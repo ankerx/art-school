@@ -1,0 +1,35 @@
+.btn {
+    width: 349px;
+    height: 50px;
+    padding: 10px 120px 10px 120px;
+    margin-bottom: 24px;
+    color: white;
+    background-color: #59ABB0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    border-radius: 10px;
+    border: none;
+}
+.btn:hover,
+.btn:active {
+    background-color: #60DFE8;
+}
+
+.menu-list-item button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 40px;
+        padding: 18px;
+        color: white;
+        background-color: #59ABB0;
+        border: none;
+        border-radius: 10px;
+}
+
+#link{
+    color:white;
+    margin: 0;
+}
