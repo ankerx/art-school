@@ -16,7 +16,11 @@ export const Header = () => {
       <nav className="navbar">
         <ul className="menu-list">
           {routes.map((route) => (
-            <LinkComponent routeName={route.name} path={route.url} />
+            <LinkComponent
+              key={route.name}
+              routeName={route.name}
+              path={route.url}
+            />
           ))}
           <li className="menu-list-item">
             <MenuButton text="Apply now" path="/apply" />
