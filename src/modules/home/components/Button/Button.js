@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./button.css";
+import "./button.scss";
 
 export const Button = ({ text, className = "" }) => {
   return <button className={`btn ${className}`}>{text}</button>;

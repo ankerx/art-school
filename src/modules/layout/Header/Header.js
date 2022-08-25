@@ -1,6 +1,6 @@
 import logo from "../../home/images/logo-SA.png";
 import { MenuButton } from "../../home/components/Button/Button";
-import "./header.css";
+import "./header.scss";
 import { LinkComponent } from "../LinkComponent/LinkComponent";
 import { routes } from "./routes";
 import { Link } from "react-router-dom";

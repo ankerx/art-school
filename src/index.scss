@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
 
+$base-color: #000000;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html,
 body,
 * {
@@ -13,7 +20,7 @@ body,
 }
 
 body {
-  color: black;
+  color: $base-color;
   background-color: white;
 
 }
@@ -21,4 +28,15 @@ a {
   color: inherit;
   text-decoration: inherit;
 
+}
+
+.wrapper {
+  margin: 0 20px;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    min-height: 100vh;
+    margin: 0 100px
+  }
 }

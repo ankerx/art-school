@@ -1,10 +1,17 @@
-import { Main } from "./modules/home/Main/Main";
 import { Routes, Route } from "react-router-dom";
+
+import { Main } from "./modules/home/Main/Main";
+
 import { Header } from "./modules/layout/Header/Header";
+
 import { Footer } from "./modules/layout/Footer/Footer";
+
 import { Courses } from "./modules/courses/Courses";
+
 import { About } from "./modules/about/About";
+
 import { Teachers } from "./modules/teachers/Teachers";
+
 import { Apply } from "./modules/apply/Apply";
 
 function App() {

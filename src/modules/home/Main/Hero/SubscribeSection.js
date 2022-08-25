@@ -1,7 +1,8 @@
-import "./subscribe.css";
+import "../styles.scss";
 import letter from "../../images/letter.png";
 import { Button } from "../../components/Button/Button";
-export const SubscribeSection = () => {
+
+export default function SubscribeSection() {
   return (
     <section className="subscribe-section">
       <div className="subscribe-section-container">
@@ -19,4 +20,4 @@ export const SubscribeSection = () => {
       </div>
     </section>
   );
-};
+}

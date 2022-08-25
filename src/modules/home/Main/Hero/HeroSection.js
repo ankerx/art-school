@@ -1,7 +1,8 @@
 import { Button } from "../../components/Button/Button";
-import "./hero.css";
+import "../styles.scss";
 import paris from "../../images/paris.png";
-export const HeroSection = () => {
+
+export default function HeroSection() {
   return (
     <section className="hero-section">
       <div className="hero-section-container">
@@ -36,4 +37,4 @@ export const HeroSection = () => {
       </div>
     </section>
   );
-};
+}

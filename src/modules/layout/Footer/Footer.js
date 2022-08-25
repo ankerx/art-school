@@ -1,4 +1,5 @@
-import "./footer.css";
+import { Link } from "react-router-dom";
+import "./footer.scss";
 
 const routes = ["Terms", "Privacy policy", "Help & Support"];
 
@@ -15,7 +16,7 @@ export const Footer = () => {
         <ul className="footer-menu-list">
           {routes.map((route) => (
             <li className="footer-menu-list-item" key={route}>
-              <a href="/">{route}</a>
+              <Link to="/">{route}</Link>
             </li>
           ))}
         </ul>

@@ -1,6 +1,4 @@
-import { HeroSection } from "../Sections/Hero/HeroSection";
-import { SubscribeSection } from "../Sections/Subscribe/SubscribeSection";
-
+import { SubscribeSection, HeroSection } from "./Hero";
 export const Main = () => {
   return (
     <main>
