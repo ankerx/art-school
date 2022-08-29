@@ -1,4 +1,5 @@
 import { Button } from "../../components/Button/Button";
+
 import "../styles.scss";
 import paris from "../../images/paris.png";
 

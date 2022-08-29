@@ -32,4 +32,17 @@
 #link{
     color:white;
     margin: 0;
+    
+}
+.menu-link{
+       display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 40px;
+        padding: 18px;
+        color: white;
+        background-color: #59ABB0;
+        border: none;
+        border-radius: 10px;
 }

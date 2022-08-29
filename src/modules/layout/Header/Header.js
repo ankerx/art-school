@@ -1,9 +1,11 @@
-import logo from "../../home/images/logo-SA.png";
-import { MenuButton } from "../../home/components/Button/Button";
-import "./header.scss";
-import { LinkComponent } from "../LinkComponent/LinkComponent";
-import { routes } from "./routes";
 import { Link } from "react-router-dom";
+
+import { MenuLink } from "../../home/components/Button/Button";
+import { routes } from "./routes";
+import { LinkComponent } from "../LinkComponent/LinkComponent";
+
+import logo from "../../home/images/logo-SA.png";
+import "./header.scss";
 
 export const Header = () => {
   return (
@@ -23,7 +25,7 @@ export const Header = () => {
             />
           ))}
           <li className="menu-list-item">
-            <MenuButton text="Apply now" path="/apply" />
+            <MenuLink text="Apply now" path="/apply" />
           </li>
         </ul>
         <button className="menu-btn">
