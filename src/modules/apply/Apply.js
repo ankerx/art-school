@@ -1,10 +1,13 @@
-import paints from "./images/paints.jpeg";
-import styles from "./apply.module.scss";
-import { Heading } from "./components/Heading";
 import { useForm, FormProvider } from "react-hook-form";
+// import Select from "react-select";
+
+import { Heading } from "./components/Heading";
 // import { LabelWithInput } from "./components/LabelWithInput";
 import { InputsContainer } from "./components/InputsContainer";
-// import Select from "react-select";
+
+import paints from "./images/paints.jpeg";
+import styles from "./apply.module.scss";
+
 export const Apply = () => {
   const onSubmit = (data) => console.log(data);
   const methods = useForm();
