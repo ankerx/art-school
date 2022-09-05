@@ -5,7 +5,6 @@ import styles from "../apply.module.scss";
 
 export const SelectCourse = ({
   label,
-  register,
   name,
   control,
   options,
@@ -23,6 +22,7 @@ export const SelectCourse = ({
         <Controller
           control={control}
           name={name}
+          rules={{ required: true }}
           render={({ field: { onChange, value } }) => (
             <Select
               onChange={(val) => {

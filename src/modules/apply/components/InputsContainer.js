@@ -9,6 +9,7 @@ import { SelectGroup } from "./SelectGroup";
 
 export const InputsContainer = ({ watch }) => {
   const [isDisabled, setIsDisabled] = useState(true);
+
   const methods = useFormContext();
 
   const { data: courses, isLoading, error } = useGetAllCoursesQuery();
@@ -43,6 +44,7 @@ export const InputsContainer = ({ watch }) => {
         options={groups}
       />
       <LabelWithInput label="Full name" name="name" {...methods} type="text" />
+
       <LabelWithInput label="E-mail" name="email" {...methods} type="email" />
       <LabelWithInput
         label="Phone number"

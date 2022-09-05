@@ -8,14 +8,21 @@ export const LabelWithInput = ({
 }) => {
   return (
     <div className={styles["label-container"]}>
-      <label className={styles.label}> {label} </label>
-      <input
-        type={type}
-        {...register(name)}
-        className={styles.input}
-        placeholder={placeholder}
-        required
-      />
+      <label htmlFor={name} className={styles.label}>
+        {label}
+      </label>
+      <div className={styles.label_flex}>
+        <input
+          type={type}
+          {...register(name, {
+            minLength: 3,
+            required: true,
+          })}
+          className={styles.input}
+          placeholder={placeholder}
+          required
+        />
+      </div>
     </div>
   );
 };

@@ -56,9 +56,18 @@ line-height: 36px;
 }
 .label-container{
     display: flex;
+
     justify-content: space-between;
     align-items: center;
     margin-bottom: 34px;
+}
+
+.label_flex {
+    display: flex;
+    flex-direction: column;
+}
+.error {
+    color:red
 }
 .submit {
     width: 150px;

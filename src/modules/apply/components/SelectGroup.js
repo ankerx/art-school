@@ -16,6 +16,7 @@ export const SelectGroup = ({ label, name, control, options, isDisabled }) => {
         <Controller
           control={control}
           name={name}
+          rules={{ required: true }}
           render={({ field: { onChange, value } }) => (
             <Select
               onChange={(val) => {
