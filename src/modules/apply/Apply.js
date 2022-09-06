@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import axios from "axios";
+
+import { postData } from "./api/applyApi";
 
 import { Success } from "./components/Success";
 import { Heading } from "./components/Heading";
@@ -10,14 +11,13 @@ import paints from "./images/paints.jpeg";
 import styles from "./apply.module.scss";
 
 export const Apply = () => {
-  const [isSuccess, setIsSuccess] = useState();
-
+  const [isSuccess, setIsSucces] = useState();
   const methods = useForm({ mode: "onChange" });
 
   const { isValid, isDirty } = methods.formState;
 
   const onSubmit = async (data) => {
-    const formatedData = {
+    const formattedData = {
       courseId: data.course.courseId,
       groupId: data.group.groupId,
       full_name: data.name,
@@ -25,15 +25,10 @@ export const Apply = () => {
       phone: data.phone,
     };
     try {
-      const response = await axios.post(
-        "http://localhost:5000/form/apply",
-        formatedData
-      );
-      console.log(response);
-      setIsSuccess(true);
-      return response;
+      await postData(formattedData);
+      setIsSucces(true);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

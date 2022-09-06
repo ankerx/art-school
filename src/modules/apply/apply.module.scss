@@ -1,5 +1,4 @@
 .container {
-    // min-height: 80vh;
     display: flex;
 }
 
@@ -41,22 +40,19 @@ line-height: 36px;
 .input {
     width: 300px;
     height: 40px;
-
     border: 1px solid #C2D2D2;
     border-radius: 10px;
     margin-right: 75px;
     padding-left: 15px;
 }
 .select_container{
-    width: 310px;
+    width: 300px;
     height: 40px;
     border-radius: 10px;
     margin-right: 75px;
-    padding-left: 15px;
 }
 .label-container{
     display: flex;
-
     justify-content: space-between;
     align-items: center;
     margin-bottom: 34px;

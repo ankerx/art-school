@@ -1,20 +1,16 @@
 import { Controller } from "react-hook-form";
 
 import Select from "react-select";
+
 import styles from "../apply.module.scss";
 
-export const SelectCourse = ({
+export const SelectComponent = ({
   label,
   name,
   control,
   options,
-  setIsDisabled,
+  isDisabled,
 }) => {
-  const values = options?.map((value) => ({
-    label: value.name,
-    courseId: value.id,
-  }));
-
   return (
     <div className={styles["label-container"]}>
       <label className={styles.label}>{label}</label>
@@ -27,11 +23,11 @@ export const SelectCourse = ({
             <Select
               onChange={(val) => {
                 onChange(val);
-                if (val) setIsDisabled(false);
               }}
               value={value}
               selected={value}
-              options={values}
+              options={options}
+              isDisabled={isDisabled}
             />
           )}
         />
