@@ -1,6 +1,6 @@
 import axios from "axios";
+import { APPLY_URL } from "../../../urls";
 
 export const postData = async (data) => {
-  const URL = "http://localhost:5000/form/apply";
-  await axios.post(URL, data);
+  await axios.post(APPLY_URL, data);
 };

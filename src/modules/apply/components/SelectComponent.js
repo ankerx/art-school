@@ -10,6 +10,7 @@ export const SelectComponent = ({
   control,
   options,
   isDisabled,
+  defaultValue,
 }) => {
   return (
     <div className={styles["label-container"]}>
@@ -28,6 +29,7 @@ export const SelectComponent = ({
               selected={value}
               options={options}
               isDisabled={isDisabled}
+              defaultValue={defaultValue}
             />
           )}
         />
