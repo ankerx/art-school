@@ -1,5 +1,4 @@
 .container {
-    min-height: 90vh;
     display: flex;
 }
 
@@ -41,32 +40,70 @@ line-height: 36px;
 .input {
     width: 300px;
     height: 40px;
-
     border: 1px solid #C2D2D2;
     border-radius: 10px;
     margin-right: 75px;
     padding-left: 15px;
 }
-.select {
+.select_container{
     width: 300px;
     height: 40px;
     border-radius: 10px;
     margin-right: 75px;
-    padding-left: 15px;
-}
-.select::after{
-    position: absolute;
-        content: "";
-        top: 14px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-        border-color: #fff transparent transparent transparent;
 }
 .label-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 34px;
+}
+
+.label_flex {
+    display: flex;
+    flex-direction: column;
+}
+.error {
+    color:red
+}
+.submit {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #59ABB0;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:disabled {
+  background: #C2D2D2
+}
+
+.success_container {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.success_heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+.success_text {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom:  32px
+}
+.success_link {
+    width: 150px;
+    color:#1B6C71;
+    border: 1px solid #1B6C71;
+    border-radius: 10px;
+    background-color: white;
+    padding: 9px 32px;
+    font-weight: 700;
 }
