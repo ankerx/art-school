@@ -8,6 +8,6 @@ test("renders home page", () => {
       <App />
     </MemoryRouter>
   );
-  const header = screen.getByText(/learn/i);
+  const header = screen.getByText(/drawing/i);
   expect(header).toBeInTheDocument();
 });
