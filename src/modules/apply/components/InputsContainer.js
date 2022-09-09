@@ -8,8 +8,6 @@ import { SelectComponent } from "./SelectComponent";
 
 
 export const InputsContainer = ({ watch, id }) => {
-
-export const InputsContainer = ({ watch, id }) => {
   console.log(params);
 
   const methods = useFormContext();
