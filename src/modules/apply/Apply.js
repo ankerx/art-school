@@ -10,11 +10,14 @@ import { InputsContainer } from "./components/InputsContainer";
 
 import paints from "./images/paints.jpeg";
 import styles from "./apply.module.scss";
+import { useParams } from "react-router-dom";
 
 export const Apply = () => {
   const { id } = useParams();
 
   const [isSuccess, setIsSucces] = useState();
+  const { id } = useParams();
+
   const methods = useForm({ mode: "onChange" });
 
   const { isValid, isDirty } = methods.formState;
