@@ -4,40 +4,31 @@ import { Details } from "./Details";
 
 import styles from "../courses.module.scss";
 
-export const Course = ({
-  title,
-  price,
-  level,
-  img,
-  duration,
-  description,
-  id,
-  periodicity,
-}) => {
+export const Course = ({ ...item }) => {
   const navigate = useNavigate();
 
   return (
     <div className={styles.card}>
       <div>
-        <img src={img} alt={title} />
+        <img src={item.thumbnail_img_url} alt={item.name} />
       </div>
       <div className={styles.wrapper}>
         <div className={styles.info_container}>
-          <p className={styles.title}>{title}</p>
-          <p className={styles.price}>{price}</p>
+          <p className={styles.title}>{item.name}</p>
+          <p className={styles.price}>{item.price}</p>
         </div>
         <div>
           <div className={styles.info_box}>
             <Details
-              level={level}
-              duration={duration}
-              periodicity={periodicity}
+              level={item.level}
+              duration={item.duration}
+              periodicity={item.periodicity}
             />
           </div>
-          <p className={styles.description}>{description}</p>
+          <p className={styles.description}>{item.description_short}</p>
         </div>
         <button
-          onClick={() => navigate(`/courses/${id}`)}
+          onClick={() => navigate(`/courses/${item.id}`)}
           className={styles.btn}
         >
           Apply
