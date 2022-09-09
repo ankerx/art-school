@@ -11,6 +11,7 @@ export const SelectComponent = ({
   options,
   isDisabled,
   indexNumber,
+
 }) => {
   return (
     <div className={styles["label-container"]}>

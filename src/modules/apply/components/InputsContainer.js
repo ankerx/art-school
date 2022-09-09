@@ -6,10 +6,12 @@ import { LabelWithInput } from "./LabelWithInput";
 
 import { SelectComponent } from "./SelectComponent";
 
+
 export const InputsContainer = ({ watch, id }) => {
+  console.log(params);
+
   const methods = useFormContext();
   const selectedCourse = watch("course");
-
   const { data: courses, isLoading, error } = useGetAllCoursesQuery();
 
   const courseOptions = useMemo(() => {
