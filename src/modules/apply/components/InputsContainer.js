@@ -6,19 +6,21 @@ import { LabelWithInput } from "./LabelWithInput";
 
 import { SelectComponent } from "./SelectComponent";
 
-export const InputsContainer = ({ watch }) => {
+export const InputsContainer = ({ watch, id }) => {
   const methods = useFormContext();
   const selectedCourse = watch("course");
 
   const { data: courses, isLoading, error } = useGetAllCoursesQuery();
 
   const courseOptions = useMemo(() => {
-    const options = courses?.map(({ name, id }) => ({ name, id }));
-    return options?.map((value) => ({
-      label: value.name,
-      courseId: value.id,
+    const options = courses?.map(({ name, id }) => ({
+      label: name,
+      courseId: id,
     }));
+    return options;
   }, [courses]);
+
+  const indexNumber = courseOptions?.findIndex((i) => i.courseId === id);
 
   const groupsOptions = useMemo(() => {
     const { groups } =
@@ -41,6 +43,7 @@ export const InputsContainer = ({ watch }) => {
         label="Course"
         {...methods}
         options={courseOptions}
+        indexNumber={indexNumber}
       />
       <SelectComponent
         name="group"

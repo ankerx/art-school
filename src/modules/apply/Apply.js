@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 import { postData } from "./api/applyApi";
 
@@ -11,6 +12,8 @@ import paints from "./images/paints.jpeg";
 import styles from "./apply.module.scss";
 
 export const Apply = () => {
+  const { id } = useParams();
+
   const [isSuccess, setIsSucces] = useState();
   const methods = useForm({ mode: "onChange" });
 
@@ -45,7 +48,7 @@ export const Apply = () => {
                 className={styles.form}
                 onSubmit={methods.handleSubmit(onSubmit)}
               >
-                <InputsContainer {...methods} />
+                <InputsContainer {...methods} id={id} />
                 <input
                   type="submit"
                   value="Apply"
