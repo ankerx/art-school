@@ -16,7 +16,6 @@ export const Apply = () => {
   const { id } = useParams();
 
   const [isSuccess, setIsSucces] = useState();
-  const { id } = useParams();
 
   const methods = useForm({ mode: "onChange" });
 
