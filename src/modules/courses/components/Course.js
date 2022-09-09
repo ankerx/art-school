@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { morphism } from "morphism";
 
 import { Details } from "./Details";
 
@@ -7,10 +8,21 @@ import styles from "../courses.module.scss";
 export const Course = ({ ...item }) => {
   const navigate = useNavigate();
 
+  const source = {
+    description_short: item.description_short,
+    thumbnail_img_url: item.thumbnail_img_url,
+  };
+
+  const schema = {
+    descriptionShort: "description_short",
+    thumbnailImgUrl: "thumbnail_img_url",
+  };
+
+  const { descriptionShort, thumbnailImgUrl } = morphism(schema, source);
   return (
     <div className={styles.card}>
       <div>
-        <img src={item.thumbnail_img_url} alt={item.name} />
+        <img src={thumbnailImgUrl} alt={item.name} />
       </div>
       <div className={styles.wrapper}>
         <div className={styles.info_container}>
@@ -25,7 +37,7 @@ export const Course = ({ ...item }) => {
               periodicity={item.periodicity}
             />
           </div>
-          <p className={styles.description}>{item.description_short}</p>
+          <p className={styles.description}>{descriptionShort}</p>
         </div>
         <button
           onClick={() => navigate(`/courses/${item.id}`)}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { morphism } from "morphism";
 
 import { useGetAllCoursesQuery } from "../../../redux/services/schoolApi";
 
@@ -15,6 +16,18 @@ export const Course = () => {
 
   const course = data.find((i) => i.id === id);
 
+  const source = {
+    description_full: course.description_full,
+    full_img_url: course.full_img_url,
+  };
+
+  const schema = {
+    descriptionFull: "description_full",
+    fullImgUrl: "full_img_url",
+  };
+
+  const { descriptionFull, fullImgUrl } = morphism(schema, source);
+
   return (
     <section className={styles.single_course_container}>
       <div className={styles.single_course_wrapper}>
@@ -28,7 +41,7 @@ export const Course = () => {
         </div>
         <h5>You will learn:</h5>
         <ul>
-          {course.description_full.map((item) => {
+          {descriptionFull.map((item) => {
             return <li key={item}>{item}</li>;
           })}
         </ul>
@@ -41,7 +54,7 @@ export const Course = () => {
         </Link>
       </div>
       <div className={styles.single_course_img}>
-        <img src={course.full_img_url} alt={course.name} />
+        <img src={fullImgUrl} alt={course.name} />
       </div>
     </section>
   );
