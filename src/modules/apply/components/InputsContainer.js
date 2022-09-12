@@ -6,10 +6,11 @@ import { LabelWithInput } from "./LabelWithInput";
 
 import { SelectComponent } from "./SelectComponent";
 
-export const InputsContainer = ({ watch, id: params }) => {
-  console.log(params);
+export const InputsContainer = ({ watch, id }) => {
   const methods = useFormContext();
+
   const selectedCourse = watch("course");
+
   const { data: courses, isLoading, error } = useGetAllCoursesQuery();
 
   const courseOptions = useMemo(() => {
@@ -19,6 +20,8 @@ export const InputsContainer = ({ watch, id: params }) => {
     }));
     return options;
   }, [courses]);
+
+  const indexNumber = courseOptions?.findIndex((i) => i.courseId === id);
 
   const groupsOptions = useMemo(() => {
     const { groups } =
@@ -41,6 +44,7 @@ export const InputsContainer = ({ watch, id: params }) => {
         label="Course"
         {...methods}
         options={courseOptions}
+        indexNumber={indexNumber}
       />
       <SelectComponent
         name="group"

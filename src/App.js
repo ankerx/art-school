@@ -7,6 +7,7 @@ import { Courses } from "./modules/courses/Courses";
 import { About } from "./modules/about/About";
 import { Teachers } from "./modules/teachers/Teachers";
 import { Apply } from "./modules/apply/Apply";
+import { Course } from "./modules/courses/pages/Course";
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:id" element={<Course />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/about" element={<About />} />
           <Route path="/apply" element={<Apply />} />
+          <Route path="/apply/:id" element={<Apply />} />
         </Routes>
       </div>
       <Footer />

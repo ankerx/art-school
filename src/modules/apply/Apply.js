@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
+import { useParams } from "react-router-dom";
 
 import { postData } from "./api/applyApi";
 
@@ -9,11 +10,11 @@ import { InputsContainer } from "./components/InputsContainer";
 
 import paints from "./images/paints.jpeg";
 import styles from "./apply.module.scss";
-import { useParams } from "react-router-dom";
 
 export const Apply = () => {
-  const [isSuccess, setIsSucces] = useState();
   const { id } = useParams();
+
+  const [isSuccess, setIsSucces] = useState();
 
   const methods = useForm({ mode: "onChange" });
 
