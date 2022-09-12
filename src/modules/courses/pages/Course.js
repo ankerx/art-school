@@ -16,17 +16,12 @@ export const Course = () => {
 
   const course = data.find((i) => i.id === id);
 
-  const source = {
-    description_full: course.description_full,
-    full_img_url: course.full_img_url,
-  };
-
   const schema = {
     descriptionFull: "description_full",
     fullImgUrl: "full_img_url",
   };
 
-  const { descriptionFull, fullImgUrl } = morphism(schema, source);
+  const { descriptionFull, fullImgUrl } = morphism(schema, course);
 
   return (
     <section className={styles.single_course_container}>

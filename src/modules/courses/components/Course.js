@@ -8,17 +8,12 @@ import styles from "../courses.module.scss";
 export const Course = ({ ...item }) => {
   const navigate = useNavigate();
 
-  const source = {
-    description_short: item.description_short,
-    thumbnail_img_url: item.thumbnail_img_url,
-  };
-
   const schema = {
     descriptionShort: "description_short",
     thumbnailImgUrl: "thumbnail_img_url",
   };
 
-  const { descriptionShort, thumbnailImgUrl } = morphism(schema, source);
+  const { descriptionShort, thumbnailImgUrl } = morphism(schema, item);
   return (
     <div className={styles.card}>
       <div>
