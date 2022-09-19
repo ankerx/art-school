@@ -9,7 +9,8 @@ import { courseSchema } from "../schema";
 export const Course = ({ ...item }) => {
   const navigate = useNavigate();
 
-  const { descriptionShort, thumbnailImgUrl } = morphism(courseSchema, item);
+  const { descriptionShort, thumbnailImgUrl } = morphism(schema, item);
+
   return (
     <div className={styles.card}>
       <div>
