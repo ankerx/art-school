@@ -1,18 +1,16 @@
 import { morphism } from "morphism";
+import { teacherSchema } from "./schema";
 
 import styles from "./teachers.module.scss";
 
-export const TeacherCard = ({ ...item }) => {
-  const schema = {
-    firstName: "first_name",
-    lastName: "last_name",
-  };
+export const TeacherCard = (props) => {
+  const { firstName, lastName } = morphism(teacherSchema, props);
+  const { courses, photo } = props;
 
-  const { firstName, lastName } = morphism(schema, item);
   return (
     <div className={styles.container}>
       <div className={styles.img}>
-        <img src={item.photo} alt={item.first_name} />
+        <img src={photo} alt={firstName} />
       </div>
       <p className={styles.name}>
         {firstName} {lastName}
@@ -20,7 +18,7 @@ export const TeacherCard = ({ ...item }) => {
       <div className={styles.details}>
         <p className={styles.title}>Courses</p>
         <div className={styles.details_courses}>
-          {item.courses.map((courseName) => {
+          {courses.map((courseName) => {
             return (
               <p key={courseName} className={styles.text}>
                 {courseName}
@@ -31,11 +29,11 @@ export const TeacherCard = ({ ...item }) => {
       </div>
       <div className={styles.details}>
         <p className={styles.title}>Education</p>
-        <p className={styles.text}>{item.education}</p>
+        <p className={styles.text}>{props.education}</p>
       </div>
       <div className={styles.details}>
         <p className={styles.title}>About me</p>
-        <p className={styles.text}>{item.about}</p>
+        <p className={styles.text}>{props.about}</p>
       </div>
     </div>
   );
