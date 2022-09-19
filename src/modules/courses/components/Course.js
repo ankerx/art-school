@@ -4,16 +4,12 @@ import { morphism } from "morphism";
 import { Details } from "./Details";
 
 import styles from "../courses.module.scss";
+import { courseSchema } from "../schema";
 
 export const Course = ({ ...item }) => {
   const navigate = useNavigate();
 
-  const schema = {
-    descriptionShort: "description_short",
-    thumbnailImgUrl: "thumbnail_img_url",
-  };
-
-  const { descriptionShort, thumbnailImgUrl } = morphism(schema, item);
+  const { descriptionShort, thumbnailImgUrl } = morphism(courseSchema, item);
   return (
     <div className={styles.card}>
       <div>

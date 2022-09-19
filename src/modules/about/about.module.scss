@@ -1,0 +1,55 @@
+.about-section {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 20px;
+
+}
+
+.container {
+    height: 552px;
+    display: flex;
+}
+.map{
+    margin-bottom: 30px;
+}
+.heading {
+    display: flex;
+    justify-content: space-between;
+}
+.map-container {
+    width: 455px;
+
+    margin-bottom: 29px;
+ 
+}
+.map-container img {
+    width: 100%;
+}
+.text-container {
+    width: 570px;
+    margin-right: 140px;
+}
+.text-container p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 12px;
+
+}
+.icons img {
+    margin-right: 20px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+margin-bottom:  16px;
+}
+.icons_box{
+        margin-top: 32px;
+}
+.icons_box span{
+    margin-right:  30px;
+
+}

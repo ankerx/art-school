@@ -8,6 +8,11 @@ import { Details } from "../components/Details";
 
 import styles from "../courses.module.scss";
 
+const schema = {
+  descriptionFull: "description_full",
+  fullImgUrl: "full_img_url",
+};
+
 export const Course = () => {
   const { id } = useParams();
   const { data, isLoading } = useGetAllCoursesQuery();
@@ -15,11 +20,6 @@ export const Course = () => {
   if (isLoading) return <p>Loading...</p>;
 
   const course = data.find((i) => i.id === id);
-
-  const schema = {
-    descriptionFull: "description_full",
-    fullImgUrl: "full_img_url",
-  };
 
   const { descriptionFull, fullImgUrl } = morphism(schema, course);
 
