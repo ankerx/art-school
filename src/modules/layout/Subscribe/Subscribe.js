@@ -5,7 +5,6 @@ export const SubscribeModal = () => {
     <div className={styles.container}>
       <div className={styles.text_container}>
         <div>
-          {" "}
           <h5>Give us your email to stay tuned!</h5>
           <form>
             <input placeholder="E-mail" />
