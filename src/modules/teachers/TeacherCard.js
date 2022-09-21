@@ -1,12 +1,7 @@
-import { morphism } from "morphism";
-import { teacherSchema } from "./schema";
-
 import styles from "./teachers.module.scss";
 
 export const TeacherCard = (props) => {
-  const { firstName, lastName } = morphism(teacherSchema, props);
-  const { courses, photo } = props;
-
+  const { firstName, photo, lastName, courses, education, about } = props;
   return (
     <div className={styles.container}>
       <div className={styles.img}>
@@ -29,11 +24,11 @@ export const TeacherCard = (props) => {
       </div>
       <div className={styles.details}>
         <p className={styles.title}>Education</p>
-        <p className={styles.text}>{props.education}</p>
+        <p className={styles.text}>{education}</p>
       </div>
       <div className={styles.details}>
         <p className={styles.title}>About me</p>
-        <p className={styles.text}>{props.about}</p>
+        <p className={styles.text}>{about}</p>
       </div>
     </div>
   );
