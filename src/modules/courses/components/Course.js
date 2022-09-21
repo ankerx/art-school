@@ -16,6 +16,7 @@ export const Course = ({ course }) => {
     descriptionShort,
     id,
   } = course;
+
   return (
     <div className={styles.card}>
       <div>
