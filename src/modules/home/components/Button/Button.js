@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import "./button.scss";
 
-export const Button = ({ text, className = "" }) => {
-  return <button className={`btn ${className}`}>{text}</button>;
+export const Button = ({ text, className = "", onClick }) => {
+  return (
+    <button onClick={onClick} className={`btn ${className}`}>
+      {text}
+    </button>
+  );
 };
 
 export const MenuLink = ({ text, path }) => {

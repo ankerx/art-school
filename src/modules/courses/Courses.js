@@ -16,7 +16,7 @@ export const Courses = () => {
       <h2 className={styles.heading}>Pick your perfect course!</h2>
       <div className={styles.container}>
         {data.map((item) => {
-          return <Course key={item.id} {...item} />;
+          return <Course key={item.id} course={item} />;
         })}
       </div>
     </section>

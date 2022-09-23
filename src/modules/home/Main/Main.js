@@ -1,3 +1,4 @@
+import { SubscribeModal } from "../../layout/Subscribe/Subscribe";
 import { SubscribeSection, HeroSection } from "./Hero";
 
 export const Main = () => {
@@ -5,6 +6,7 @@ export const Main = () => {
     <main>
       <HeroSection />
       <SubscribeSection />
+      <SubscribeModal />
     </main>
   );
 };

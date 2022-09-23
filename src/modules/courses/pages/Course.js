@@ -1,11 +1,9 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { morphism } from "morphism";
 
 import { useGetAllCoursesQuery } from "../../../redux/services/schoolApi";
 
 import { Details } from "../components/Details";
-
 import styles from "../courses.module.scss";
 
 export const Course = () => {
@@ -15,13 +13,6 @@ export const Course = () => {
   if (isLoading) return <p>Loading...</p>;
 
   const course = data.find((i) => i.id === id);
-
-  const schema = {
-    descriptionFull: "description_full",
-    fullImgUrl: "full_img_url",
-  };
-
-  const { descriptionFull, fullImgUrl } = morphism(schema, course);
 
   return (
     <section className={styles.single_course_container}>
@@ -36,7 +27,7 @@ export const Course = () => {
         </div>
         <h5>You will learn:</h5>
         <ul>
-          {descriptionFull.map((item) => {
+          {course.descriptionFull.map((item) => {
             return <li key={item}>{item}</li>;
           })}
         </ul>
@@ -49,7 +40,7 @@ export const Course = () => {
         </Link>
       </div>
       <div className={styles.single_course_img}>
-        <img src={fullImgUrl} alt={course.name} />
+        <img src={course.fullImgUrl} alt={course.name} />
       </div>
     </section>
   );
